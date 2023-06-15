@@ -16,12 +16,8 @@ assembly='engine'
 compilerFlags={
     'Windows':    "-g -shared -Wvarargs -Wall -Werror -std=c++17",    #-Wall -Werror
     'Linux'  :    "-g -shared -fPIC -std=c++17" }[operatingSystem]    # -fms-extensions    # -Wall -Werror
-includeFlags={
-    'Windows':    f"-Isrc -I{os.getenv('VULKAN_SDK')}/Include",
-    'Linux'  :    f"-Isrc -I{os.getenv('VULKAN_SDK')}/include" }[operatingSystem]
-linkerFlags={
-    'Windows':    f"-luser32 -lvulkan-1 -L{os.getenv('VULKAN_SDK')}/Lib",
-    'Linux'  :    f"-lvulkan -lxcb -lX11 -lX11-xcb -lxkbcommon -L{os.getenv('VULKAN_SDK')}/lib -L/usr/X11R6/lib" }[operatingSystem]
+includeFlags='-Isrc'
+linkerFlags={ 'Windows': f"-luser32", 'Linux': '' }[operatingSystem]
 defines={
     'Windows':    "-D_DEBUG -DLEXPORT -D_CRT_SECURE_NO_WARNINGS",
     'Linux'  :    "-D_DEBUG -DLEXPORT" }[operatingSystem]

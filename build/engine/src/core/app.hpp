@@ -12,7 +12,7 @@ namespace Lib::App {
 		char* name;
 	};
 	
-	LAPI bool create(class Lib::Game::Game* game);
+	LAPI bool create(Lib::Game::Game* game);
 	
 	LAPI bool run();
 } // namespace Lib::App

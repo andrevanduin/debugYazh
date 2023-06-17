@@ -18,12 +18,6 @@ int main(void) {
 		return -1;
 	}
 	
-	// Ensure the virtual function is overriden.
-	if (!game->necessaryMethod) {
-		std::cerr << "The game's virtual function must be overriden.";
-		return -2;
-	}
-	
 	// Initialization
 	if (!Lib::App::create(game)) {
 		std::clog << "App failed to create!";

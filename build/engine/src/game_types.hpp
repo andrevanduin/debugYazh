@@ -9,8 +9,5 @@ namespace Lib::Game {
 			
 			virtual bool necessaryMethod() = 0;
 	};
-	class Game : public VirtualGame {
-		public:
-			bool necessaryMethod();
-	};
+	class Game;
 }

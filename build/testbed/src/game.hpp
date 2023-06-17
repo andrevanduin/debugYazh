@@ -2,10 +2,10 @@
 #include<game_types.hpp>
 
 namespace Lib::Game {
-	class Game : public Lib::Game::VirtualGame {
+	class Game : public VirtualGame {
 		public:
 			bool necessaryMethod() override {
-				return True;
+				return true;
 			}
 	};
 } // namespace Lib::Game

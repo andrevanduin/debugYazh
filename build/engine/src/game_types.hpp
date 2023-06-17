@@ -1,13 +1,17 @@
 #pragma once
 
-#include"core/app.hpp"
-
 namespace Lib::Game {
-	class VirtualGame {
-		public:
-			Lib::App::config appConfig;
-			
-			virtual bool necessaryMethod() = 0;
+	struct Config {
+		int num;
+		const char* name;
 	};
-	class Game;
+
+	class VirtualGame {
+	public:
+		virtual bool necessaryMethod() = 0;
+
+		Config appConfig;
+	};
+
+	VirtualGame* create_game();
 }

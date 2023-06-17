@@ -1,18 +1,9 @@
 #pragma once
-
 #include"defines.hpp"
-
-namespace Lib::Game {
-	class Game;
-}
+#include"game_types.hpp"
 
 namespace Lib::App {
-	using config = struct config {
-		int num;
-		char* name;
-	};
-	
-	LAPI bool create(Lib::Game::Game* game);
+	LAPI bool create(Lib::Game::VirtualGame* game);
 	
 	LAPI bool run();
 } // namespace Lib::App

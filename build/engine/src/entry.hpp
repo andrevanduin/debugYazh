@@ -2,17 +2,13 @@
 #include"core/app.hpp"
 #include"game_types.hpp"
 
-// Externally defined function to create game.
-namespace Lib::Game {
-	extern Game* create();
-}
 /**
  * The main entry point of the app.
  */
 int main(void) {
 	
 	// Request the game instance from the app.
-	Lib::Game::Game* game = Lib::Game::create();
+	Lib::Game::VirtualGame* game = Lib::Game::create_game();
 	if (!game) {
 		std::cerr << "Could not create game!";
 		return -1;

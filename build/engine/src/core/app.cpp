@@ -1,17 +1,19 @@
-#include"app.hpp"
-#include"game_types.hpp"
+#include "app.hpp"
+#include "game_types.hpp"
 
 namespace Lib::App {
-	static struct state {
-		Lib::Game::Game* game;
+	struct State 
+	{
+		Lib::Game::VirtualGame* game;
 		bool run;
 		bool suspend;
 		int num;
-	} state;
-	
+	};
+
+	static State state;
 	static bool init = false;
 	
-	bool create(Lib::Game::Game* game) {
+	bool create(Lib::Game::VirtualGame* game) {
 		if(init) {
 			std::cerr << "Lib::App::create() called more than once.";
 			return false;

@@ -1,12 +1,14 @@
 #include<entry.hpp>
+#include"game.hpp"
 
 // Define the function to create a game.
 namespace Lib::Game {
-Game game;	
-	Game* create() {
+	Game game;
+
+	VirtualGame* create_game() {
 		// Application configuration.
 		game.appConfig.num = 3;
-		game.appConfig.name = (char*)"Game";
+		game.appConfig.name = "Game";
 		
 		return &game;
 	}
